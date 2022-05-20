@@ -94,7 +94,7 @@ function createApplication (name, dir, options, done) {
     version: '0.0.0',
     private: true,
     scripts: {
-      start: 'node ./bin/www',
+      start: 'node ./bin/www'
     },
     dependencies: {
       debug: '~2.6.9',
