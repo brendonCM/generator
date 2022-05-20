@@ -399,7 +399,7 @@ describe('express(1)', function () {
         run(ctx.dir, ['--css', 'stylus'], function (err, stdout) {
           if (err) return done(err)
           ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-          assert.strictEqual(ctx.files.length, 16, 'should have 16 files')
+          assert.strictEqual(ctx.files.length, 20, 'should have 20 files')
           done()
         })
       })
@@ -464,7 +464,7 @@ describe('express(1)', function () {
         if (err) return done(err)
         ctx.warnings = warnings
         ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-        assert.strictEqual(ctx.files.length, 15, 'should have 15 files')
+        assert.strictEqual(ctx.files.length, 19, 'should have 19 files')
         done()
       })
     })
@@ -494,7 +494,7 @@ describe('express(1)', function () {
       run(ctx.dir, ['--git'], function (err, stdout) {
         if (err) return done(err)
         ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-        assert.strictEqual(ctx.files.length, 17, 'should have 17 files')
+        assert.strictEqual(ctx.files.length, 21, 'should have 21 files')
         done()
       })
     })
@@ -540,7 +540,7 @@ describe('express(1)', function () {
         if (err) return done(err)
         ctx.warnings = warnings
         ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-        assert.strictEqual(ctx.files.length, 16)
+        assert.strictEqual(ctx.files.length, 20)
         done()
       })
     })
@@ -595,7 +595,7 @@ describe('express(1)', function () {
         if (err) return done(err)
         ctx.warnings = warnings
         ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-        assert.strictEqual(ctx.files.length, 15)
+        assert.strictEqual(ctx.files.length, 19)
         done()
       })
     })
@@ -632,7 +632,7 @@ describe('express(1)', function () {
       run(ctx.dir, ['--no-view'], function (err, stdout) {
         if (err) return done(err)
         ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-        assert.strictEqual(ctx.files.length, 13)
+        assert.strictEqual(ctx.files.length, 17)
         done()
       })
     })
@@ -689,7 +689,7 @@ describe('express(1)', function () {
         if (err) return done(err)
         ctx.warnings = warnings
         ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-        assert.strictEqual(ctx.files.length, 16)
+        assert.strictEqual(ctx.files.length, 20)
         done()
       })
     })
@@ -772,7 +772,7 @@ describe('express(1)', function () {
         run(ctx.dir, ['--view', 'dust'], function (err, stdout) {
           if (err) return done(err)
           ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-          assert.strictEqual(ctx.files.length, 15, 'should have 15 files')
+          assert.strictEqual(ctx.files.length, 19, 'should have 19 files')
           done()
         })
       })
@@ -836,7 +836,7 @@ describe('express(1)', function () {
         run(ctx.dir, ['--view', 'ejs'], function (err, stdout) {
           if (err) return done(err)
           ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-          assert.strictEqual(ctx.files.length, 15, 'should have 15 files')
+          assert.strictEqual(ctx.files.length, 19, 'should have 19 files')
           done()
         })
       })
@@ -900,7 +900,7 @@ describe('express(1)', function () {
         run(ctx.dir, ['--view', 'hbs'], function (err, stdout) {
           if (err) return done(err)
           ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-          assert.strictEqual(ctx.files.length, 16)
+          assert.strictEqual(ctx.files.length, 20)
           done()
         })
       })
@@ -965,7 +965,7 @@ describe('express(1)', function () {
         run(ctx.dir, ['--view', 'hjs'], function (err, stdout) {
           if (err) return done(err)
           ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-          assert.strictEqual(ctx.files.length, 15)
+          assert.strictEqual(ctx.files.length, 19)
           done()
         })
       })
@@ -1029,7 +1029,7 @@ describe('express(1)', function () {
         run(ctx.dir, ['--view', 'pug'], function (err, stdout) {
           if (err) return done(err)
           ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-          assert.strictEqual(ctx.files.length, 16)
+          assert.strictEqual(ctx.files.length, 20)
           done()
         })
       })
@@ -1094,7 +1094,7 @@ describe('express(1)', function () {
         run(ctx.dir, ['--view', 'twig'], function (err, stdout) {
           if (err) return done(err)
           ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-          assert.strictEqual(ctx.files.length, 16)
+          assert.strictEqual(ctx.files.length, 20)
           done()
         })
       })
@@ -1159,7 +1159,7 @@ describe('express(1)', function () {
         run(ctx.dir, ['--view', 'vash'], function (err, stdout) {
           if (err) return done(err)
           ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-          assert.strictEqual(ctx.files.length, 16)
+          assert.strictEqual(ctx.files.length, 20)
           done()
         })
       })
@@ -1221,7 +1221,6 @@ describe('express(1)', function () {
 
 function npmInstall (dir, callback) {
   var env = utils.childEnvironment()
-  console.log(env)
 
   exec('npm install', { cwd: dir, env: env, maxBuffer: STDERR_MAX_BUFFER }, function (err, stderr) {
     if (err) {
