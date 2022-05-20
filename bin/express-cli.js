@@ -145,6 +145,10 @@ function createApplication (name, dir, options, done) {
   mkdir(dir, 'public/javascripts')
   mkdir(dir, 'public/images')
   mkdir(dir, 'public/stylesheets')
+  mkdir(dir, 'frameworks')
+  mkdir(dir, 'frameworks/common')
+  mkdir(dir, 'frameworks/database')
+  mkdir(dir, 'frameworks/repositories')
 
   // copy css templates
   switch (options.css) {
