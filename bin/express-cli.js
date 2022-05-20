@@ -93,11 +93,6 @@ function createApplication (name, dir, options, done) {
     name: name,
     version: '0.0.0',
     private: true,
-    main: 'app.js',
-    directories: {
-      doc: "docs",
-      test: "tests"
-    },
     scripts: {
       start: 'node ./bin/www',
     },
