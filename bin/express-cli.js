@@ -93,12 +93,20 @@ function createApplication (name, dir, options, done) {
     name: name,
     version: '0.0.0',
     private: true,
+    main: 'app.js',
+    directories: {
+      doc: "docs",
+      test: "tests"
+    },
     scripts: {
-      start: 'node ./bin/www'
+      start: 'node ./bin/www',
     },
     dependencies: {
       debug: '~2.6.9',
-      express: '~4.17.1'
+      express: '~4.17.1',
+      helmet: '~5.0.2',
+      joi: '~17.6.0',
+      compression: '~1.7.4'
     }
   }
 
