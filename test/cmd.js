@@ -86,7 +86,8 @@ describe('express(1)', function () {
         '    "chance": "~1.1.8",\n' +
         '    "jest": "~28.0.3",\n' +
         '    "nodemon": "~2.0.16",\n' +
-        '    "supertest": "~6.2.3",\n' +
+        '    "supertest": "~6.2.3"\n' +
+        '  }\n' +
         '}\n')
     })
 
