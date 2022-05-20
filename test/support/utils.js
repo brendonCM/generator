@@ -17,7 +17,7 @@ module.exports.tmpDir = tmpDir
 function childEnvironment () {
   var env = Object.create(null)
 
-  // copy the environment except for npm veriables
+  // copy the environment except for npm variables
   for (var key in process.env) {
     if (key.slice(0, 4) !== 'npm_') {
       env[key] = process.env[key]
