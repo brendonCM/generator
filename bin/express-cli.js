@@ -101,7 +101,14 @@ function createApplication (name, dir, options, done) {
       express: '~4.17.1',
       helmet: '~5.0.2',
       joi: '~17.6.0',
-      compression: '~1.7.4'
+      compression: '~1.7.4',
+      dotenv: "~16.0.0",
+    },
+    devDependencies: {
+      chance: '~1.1.8',
+      jest: '~28.0.3',
+      nodemon: '~2.0.16',
+      supertest: '~6.2.3',
     }
   }
 

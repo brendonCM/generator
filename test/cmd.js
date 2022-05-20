@@ -74,13 +74,19 @@ describe('express(1)', function () {
         '    "compression": "~1.7.4",\n' +
         '    "cookie-parser": "~1.4.5",\n' +
         '    "debug": "~2.6.9",\n' +
+        '    "dotenv": "~16.0.0",\n' +
         '    "express": "~4.17.1",\n' +
         '    "helmet": "~5.0.2",\n' +
         '    "http-errors": "~1.7.2",\n' +
         '    "jade": "~1.11.0",\n' +
         '    "joi": "~17.6.0",\n' +
         '    "morgan": "~1.10.0"\n' +
-        '  }\n' +
+        '  },\n' +
+        '  "devDependencies": {\n' +
+        '    "chance": "~1.1.8",\n' +
+        '    "jest": "~28.0.3",\n' +
+        '    "nodemon": "~2.0.16",\n' +
+        '    "supertest": "~6.2.3",\n' +
         '}\n')
     })
 
