@@ -33,7 +33,7 @@ describe('express(1)', function () {
         ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
         ctx.stdout = stdout
         ctx.warnings = warnings
-        assert.strictEqual(ctx.files.length, 16)
+        assert.strictEqual(ctx.files.length, 20)
         done()
       })
     })
@@ -71,15 +71,15 @@ describe('express(1)', function () {
         '    "start": "node ./bin/www"\n' +
         '  },\n' +
         '  "dependencies": {\n' +
+        '    "compression": "~1.7.4",\n' +
         '    "cookie-parser": "~1.4.5",\n' +
         '    "debug": "~2.6.9",\n' +
         '    "express": "~4.17.1",\n' +
+        '    "helmet": "~5.0.2",\n' +
         '    "http-errors": "~1.7.2",\n' +
         '    "jade": "~1.11.0",\n' +
+        '    "joi": "~17.6.0",\n' +
         '    "morgan": "~1.10.0"\n' +
-        '    "helmet": "~5.0.2"\n' +
-        '    "joi: "~17.6.0"\n' +
-        '    "compression: "~1.7.4"\n' +
         '  }\n' +
         '}\n')
     })
@@ -130,7 +130,7 @@ describe('express(1)', function () {
       it('should create basic app', function (done) {
         run(ctx0.dir, [], function (err, output) {
           if (err) return done(err)
-          assert.strictEqual(utils.parseCreatedFiles(output, ctx0.dir).length, 16)
+          assert.strictEqual(utils.parseCreatedFiles(output, ctx0.dir).length, 20)
           done()
         })
       })
@@ -150,7 +150,7 @@ describe('express(1)', function () {
       it('should create basic app', function (done) {
         run(ctx1.dir, [], function (err, output) {
           if (err) return done(err)
-          assert.strictEqual(utils.parseCreatedFiles(output, ctx1.dir).length, 16)
+          assert.strictEqual(utils.parseCreatedFiles(output, ctx1.dir).length, 20)
           done()
         })
       })
@@ -205,7 +205,7 @@ describe('express(1)', function () {
         ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
         ctx.stderr = stderr
         ctx.stdout = stdout
-        assert.strictEqual(ctx.files.length, 17)
+        assert.strictEqual(ctx.files.length, 21)
         done()
       })
     })
@@ -273,7 +273,7 @@ describe('express(1)', function () {
         run(ctx.dir, ['--css', 'less'], function (err, stdout) {
           if (err) return done(err)
           ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-          assert.strictEqual(ctx.files.length, 16, 'should have 16 files')
+          assert.strictEqual(ctx.files.length, 20, 'should have 20 files')
           done()
         })
       })
@@ -336,7 +336,7 @@ describe('express(1)', function () {
         run(ctx.dir, ['--css', 'sass'], function (err, stdout) {
           if (err) return done(err)
           ctx.files = utils.parseCreatedFiles(stdout, ctx.dir)
-          assert.strictEqual(ctx.files.length, 16, 'should have 16 files')
+          assert.strictEqual(ctx.files.length, 20, 'should have 20 files')
           done()
         })
       })
@@ -1221,6 +1221,7 @@ describe('express(1)', function () {
 
 function npmInstall (dir, callback) {
   var env = utils.childEnvironment()
+  console.log(env)
 
   exec('npm install', { cwd: dir, env: env, maxBuffer: STDERR_MAX_BUFFER }, function (err, stderr) {
     if (err) {
